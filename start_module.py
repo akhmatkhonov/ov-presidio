@@ -10,7 +10,7 @@ if 'Successfully installed' in installed_dependencies:
 import json
 import re
 from jsonschema import validate
-from onevizion import IntegrationLog, LogLevel
+from onevizion import ModuleLog, LogLevel
 from module import Module
 
 
@@ -28,7 +28,7 @@ except Exception as exceptiion:
 with open('ihub_parameters.json', 'rb') as module_run:
     module_run_data = json.loads(module_run.read().decode('utf-8'))
 
-module_log = IntegrationLog(
+module_log = ModuleLog(
     module_run_data['processId'], 
     settings_data['ovUrl'], 
     settings_data['ovAccessKey'], 
